@@ -63,6 +63,9 @@ public class hangman {
     public static void main(String[] args) {
 
         hangman newHangmanGame = new hangman();
+
+        // init hidden word to be displayed
+        String chosenWordHidden = newHangmanGame.initChosenWordHidden(newHangmanGame.chosenWord);
         // welcome player and introduce game premise 
         newHangmanGame.welcomeInstructions();
 
@@ -216,6 +219,24 @@ public class hangman {
         System.out.println(welcomeMessage);
         
     }
+
+
+    public String initChosenWordHidden(String chosenWord) {
+        String initialHiddenString = "";
+        for (int i = 0; i < chosenWord.length(); i++) {
+            initialHiddenString += "___ ";
+        }
+        return initialHiddenString;
+    }
+
+    public String updateChosenWordHiddenChar(char character, String currentHiddenString) {
+        return "";
+    }
+
+    public String updateChosenWordHiddenString(String guessedWord, String currentHiddenString) {
+        return "";
+    }
+
 
 
 
