@@ -74,10 +74,26 @@ public class hangman {
         newHangmanGame.userInput.nextLine();
         
         
+        
 
         // main game loop
         while(newHangmanGame.playerIncorrectGuesses != 6) {
+            
+            // display current state 
             System.out.println(newHangmanGame.currentHangman);
+            System.out.println("Word: " + chosenWordHidden);
+            System.out.println("Enter a letter: ");
+
+            String userInput = newHangmanGame.userInput.nextLine().trim().toLowerCase();
+
+            // handle game commands (e.g. "exit")
+            if (userInput.equals("exit")) {
+                System.out.println("Thanks for playing!");
+                break;
+            }
+
+            
+            
 
         }
         
@@ -238,7 +254,22 @@ public class hangman {
     }
 
 
+    // getters and setters
+    public void updateHangman(int playerIncorrectGuesses) {
+        this.currentHangman = drawHangman(playerIncorrectGuesses);
+    }
 
+    public String getCurrentHangman() {
+        return this.currentHangman;
+    }
+
+    public void updatePlayerIncorrectGuesses() {
+        this.playerIncorrectGuesses++;
+    }
+
+    public int getCurrentPlayerInccorectGuesses() {
+        return this.playerIncorrectGuesses;
+    }
 
     
 }
